@@ -14,7 +14,7 @@ func bubbleSort(arr *[5]int) {
 			}
 		}
 	}
-	println(arrsize)
+	//println(arrsize)
 }
 func main() {
 	fmt.Println("bubble sort")
