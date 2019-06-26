@@ -2,27 +2,27 @@ package main
 
 import "fmt"
 
-func binary(arr *[7]int, key int, low int, high int) int {
+func binary(arr [7]int, low int, high int, key int) int {
 	//arrsize :=
-	mid := low + high/2
-	fmt.Println("the mid element is ", mid)
+	mid := low + (high-low)/2
+	//fmt.Println("the mid element is ", mid)
 	if arr[mid] == key {
 		return mid
 	} else if arr[mid] > key {
-		return binary(arr, key, low, mid-1)
+		return binary(arr, low, mid-1, key)
 	} else {
-		return binary(arr, key, mid+1, high)
+		return binary(arr, mid+1, high, key)
 	}
 	return 0
 }
 func main() {
 
-	arr := [7]int{15, 2, 54, 1, 7, 22, 8}
-	key := 54
+	arr := [7]int{1, 2, 3, 4, 5, 6, 7}
+	key := 1
 	fmt.Println("calling func ")
 	arrsize := len(arr)
 	low := 0
 	high := arrsize - 1
-	position := binary(&arr, key, low, high)
+	position := binary(arr, low, high, key)
 	fmt.Println("Found the array element at the position", position)
 }
