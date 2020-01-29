@@ -1,1 +1,1 @@
-# AlgorithmsInGo
+# GoAlgo
